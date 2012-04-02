@@ -1,0 +1,20 @@
+HTTP/1.1 200 OK
+Date: Tue, 30 Jun 2009 17:44:22 GMT
+Server: hi
+Status: 200 OK
+X-Served-From: b004
+X-Timeline-Cache-Hit: Hit
+Cache-Control: max-age=60, must-revalidate, max-age=300
+Content-Type: application/json; charset=utf-8
+X-Served-By: c004.twitter.com
+Expires: Tue, 30 Jun 2009 17:49:22 GMT
+Content-Length: 737
+Vary: Accept-Encoding
+X-Varnish: 409233117
+Age: 0
+Via: 1.1 varnish
+X-Cache-Svr: c004.twitter.com
+X-Cache: MISS
+Connection: close
+
+{"results":[{"text":"@racheldonovan beginning class is in-depth ruby &amp; TDD of the major features of rails. it's for developers new to ruby or testing.","to_user_id":2316235,"to_user":"racheldonovan","from_user":"thoughtbot","id":2406264287,"from_user_id":358670,"iso_language_code":"en","source":"&lt;a href=&quot;http:\/\/www.atebits.com\/&quot;&gt;Tweetie&lt;\/a&gt;","profile_image_url":"http:\/\/s3.amazonaws.com\/twitter_production\/profile_images\/51656809\/radio_normal.png","created_at":"Tue, 30 Jun 2009 17:03:11 +0000"}],"since_id":0,"max_id":2406264287,"refresh_url":"?since_id=2406264287&q=beginning+class+is+in-depth+ruby","results_per_page":2,"completed_in":0.018828,"page":1,"query":"beginning+class+is+in-depth+ruby"}

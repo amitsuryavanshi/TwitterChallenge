@@ -1,0 +1,57 @@
+= Twitter Challenge 
+
+HashtagUrls::TwitterUrls is used to fetch all the unique http urls in the last 100 most recent tweets using the supplied hashtag.
+
+How to use:
+
+You can run the script by passing it a hash tag e.g.
+
+$ ruby twitter_hashtag_urls.rb Hashtag
+
+Sample Output:
+1. "http://xyz.com"
+2. "http://pqr.com"
+3. "http://abc.com"
+
+Dependencies
+
+This script is tested on 1.8.x Ruby version
+Gems:
+1.json 1.6.6
+2.rspec2.9.0
+
+Credits:
+
+This script uses twitter-search library, created by Rafal Piekarski. Reposiory of which is at
+https://github.com/croaky/twitter-search.git
+
+== Usage
+
+1. require 'hashtag_urls'
+2. client = HashtagUrls::TwitterUrls.new('hashtag')
+3. tweets = client.extract_twitts
+4. uls = client.extract_urls_from_twitts(tweets)
+5. client.format_urls(urls)
+
+== License
+
+Copyright (c) 2012 Amit Suryavanshi
+ 
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+ 
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+ 
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

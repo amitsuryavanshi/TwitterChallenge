@@ -1,0 +1,20 @@
+HTTP/1.1 200 OK
+Date: Tue, 30 Jun 2009 18:17:39 GMT
+Server: hi
+Status: 200 OK
+X-Served-From: searchdb016
+X-Timeline-Cache-Hit: Hit
+Cache-Control: max-age=60, must-revalidate, max-age=300
+Content-Type: application/json; charset=utf-8
+X-Served-By: searchweb016.twitter.com
+Expires: Tue, 30 Jun 2009 18:22:39 GMT
+Content-Length: 755
+Vary: Accept-Encoding
+X-Varnish: 710226785
+Age: 0
+Via: 1.1 varnish
+X-Cache-Svr: searchweb016.twitter.com
+X-Cache: MISS
+Connection: close
+
+{"results":[{"text":"@teflonted I can get a machine running pretty quickly, this guide from #ThoughtBot is a good checklist as well:  http:\/\/bit.ly\/eaSj2","to_user_id":67976,"to_user":"teflonted","from_user":"mwilliams","id":2407099995,"from_user_id":19051,"iso_language_code":"en","source":"&lt;a href=&quot;http:\/\/www.tweetdeck.com\/&quot;&gt;TweetDeck&lt;\/a&gt;","profile_image_url":"http:\/\/s3.amazonaws.com\/twitter_production\/profile_images\/112562238\/Picture_2_normal.png","created_at":"Tue, 30 Jun 2009 18:02:25 +0000"}],"since_id":0,"max_id":2407099995,"refresh_url":"?since_id=2407099995&q=thoughtbot","results_per_page":1,"next_page":"?page=2&max_id=2407099995&rpp=1&q=thoughtbot","completed_in":0.029054,"page":1,"query":"thoughtbot"}
