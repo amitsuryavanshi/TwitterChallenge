@@ -3,8 +3,15 @@ require 'rspec'
 require 'hashtag_urls'
 
 describe HashtagUrls do
+  
   before(:each) do
     @obj = HashtagUrls::TwitterUrls.new('ror')
+  end
+
+  describe "HashtagUrls.validate_hashtag" do
+    it "should raise Error if anything other than string is provided as hashtag" do
+      lambda{HashtagUrls::TwitterUrls.new(1)}.should raise_error
+    end
   end
 
   describe "HashtagUrls.extract_twitts" do

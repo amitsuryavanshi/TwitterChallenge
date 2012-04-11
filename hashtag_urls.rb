@@ -9,11 +9,11 @@ class TwitterUrls
   
   def initialize(hashtag)
      @hashtag = hashtag
+     validate_hashtag
   end
 
   # fecting twitts related to hashtag from twitter
-  def extract_twitts
-    validate_hashtag
+  def extract_twitts    
     client = TwitterSearch::Client.new('thunderthimble')
     client.query(:q => "##{@hashtag}", :rpp => '100')
   end
