@@ -9,11 +9,7 @@ else
   puts "There are no tweets related to given hashtag"
  else  
   urls = obj.extract_urls_from_twitts(tweets)
-  if urls.empty?
-    puts "There are no urls in tweets related to given hashtag"
-  else  
-    puts obj.format_urls(urls)
-  end 
+  puts urls.empty? ? "There are no urls in tweets related to given hashtag" : obj.format_urls(urls)
  end
 end
 
