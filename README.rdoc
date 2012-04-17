@@ -16,9 +16,15 @@ Sample Output:
 Dependencies
 
 This script is tested on 1.8.x Ruby version
+
 Gems:
-1.json 1.6.6
-2.rspec2.9.0
+
+1.dancroak-twitter-search 0.5.8
+
+2.json 1.6.6
+
+3.rspec 2.9.0
+
 
 Credits:
 
@@ -29,9 +35,8 @@ https://github.com/croaky/twitter-search.git
 
 1. require 'hashtag_urls'
 2. client = HashtagUrls::TwitterUrls.new('hashtag')
-3. tweets = client.extract_twitts
-4. uls = client.extract_urls_from_twitts(tweets)
-5. client.format_urls(urls)
+3. client.urls
+4. if there are no tweets related to hashtag or no urls in tweets client.message will give you appropriate message
 
 == License
 
