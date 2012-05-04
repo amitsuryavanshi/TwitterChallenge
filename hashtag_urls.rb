@@ -6,7 +6,7 @@ require 'twitter_search'
 module HashtagUrls
 
   class TwitterUrls
-    attr_accessor :message 
+    attr_reader :message 
  
     def initialize(hashtag)
       @hashtag = hashtag
@@ -22,25 +22,25 @@ module HashtagUrls
     private
   
     def get_urls
-      twitt_urls = []
-      twitts = extract_twitts
-      if twitts.none?
+      tweet_urls = []
+      tweets = extract_tweets
+      if tweets.none?
         @message = "There are no tweets related to given hashtag - #{@hashtag}" unless @message
-        twitt_urls
+        tweet_urls
       else
-        twitts.each{|tweet| twitt_urls += URI.extract(tweet.text,'http')}
-        @message = "There are no urls in tweets related to given hashtag - #{@hashtag}" if twitt_urls.empty?
-        twitt_urls.uniq
+        tweets.each{|tweet| tweet_urls += URI.extract(tweet.text,'http')}
+        @message = "There are no urls in tweets related to given hashtag - #{@hashtag}" if tweet_urls.empty?
+        tweet_urls.uniq
       end
     end
 
-    # fecting twitts related to hashtag from twitter
-    def extract_twitts    
+    # fetching tweets related to hashtag from twitter
+    def extract_tweets
       begin
         client = TwitterSearch::Client.new
         client.query(:q => "##{@hashtag}", :rpp => '100')
       rescue
-        @message = "Somethig went wrong while extacting twitts from twitter"
+        @message = "Somethig went wrong while extacting tweets from twitter"
         []
       end
     end

@@ -33,10 +33,11 @@ https://github.com/croaky/twitter-search.git
 
 == Usage
 
-1. require 'hashtag_urls'
-2. client = HashtagUrls::TwitterUrls.new('hashtag')
-3. client.urls
-4. if there are no tweets related to hashtag or no urls in tweets client.message will give you appropriate message
+1. put dancroak-twitter-search in your gemfile with source 'http://gems.github.com'
+2. require 'hashtag_urls'
+3. client = HashtagUrls::TwitterUrls.new('hashtag')
+4. client.urls
+5. if there are no tweets related to hashtag or no urls in tweets client.message will give you appropriate message
 
 == License
 
