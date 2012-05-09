@@ -15,13 +15,30 @@ describe HashtagUrls do
 
   describe "HashtagUrls::TwitterUrls.urls" do
     it "should extract urls pertaining to given hashtag" do
-      @obj.urls.each do |url|
-        url.should match /^http/
-      end
+      tweet = double('Tweet')
+      tweet.stub(:text){"Tweet with url http://www.abc.com"}
+      TwitterSearch::Client.any_instance.stub(:query).and_return([tweet,tweet,tweet])
+      @obj.urls.should eq ["http://www.abc.com"]
     end
-    
-    it "should fetch atmost 100 twitts related to given hashtag" do
-      @obj.urls.count.should be_between(1, 100)
+
+    it "should set appropriate massage if error occurs while extracting tweets" do
+      TwitterSearch::Client.any_instance.stub(:query) {raise 'An error has occured'}
+      @obj.urls
+      @obj.message.should eq "Somethig went wrong while extacting tweets from twitter"
+    end
+
+    it "should set appropriate massage if there are no tweets related to given hashtag" do
+      TwitterSearch::Client.any_instance.stub(:query).and_return([])
+      @obj.urls
+      @obj.message.should eq "There are no tweets related to given hashtag - ror"
+    end
+
+    it "should set appropriate massage if there are no ulrs in tweets related to given hashtag" do
+      tweet = double('Tweet')
+      tweet.stub(:text){"Tweet wothout url"}
+      TwitterSearch::Client.any_instance.stub(:query).and_return([tweet,tweet,tweet])
+      @obj.urls
+      @obj.message.should eq "There are no urls in tweets related to given hashtag - ror"
     end
   end
     
